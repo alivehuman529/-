@@ -1,0 +1,13 @@
+{
+  "pages":[
+    "pages/todos/todos"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#CCFFCC",
+    "navigationBarTitleText": "DAFA",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

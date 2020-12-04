@@ -1,0 +1,30 @@
+<view class="container">
+  <view class="header">
+    <image src="/images/1.png" bindtap="addTodoHandle"></image>
+    <input type="text" placeholder="在这里添加你的计划..." value="{{input}}" bindinput="inputChangeHandle" bindconfirm="addTodoHandle"/>
+  </view>
+  <block wx:if="{{todos.length}}">
+  <view class="todos">
+    <view 
+    class="item{{ item.completed ? ' completed' : ''}}" 
+    wx:for="{{todos}}" 
+    wx:key="name" 
+    bindtap="toggleTodoHandle" 
+    data-index="{{index}}"
+    >
+      <icon type="{{item.completed ? 'success' : 'circle'}}"></icon>
+      <text>{{item.name}}</text>
+      <icon type="clear" size="16" catchtap="removeTodoHandle" data-index="{{index}}"></icon>
+    </view>
+  </view>
+  <view class="footer">
+    <text bindtap="toggleAllHandle">Toggle all</text>
+    <text wx:if="{{leftCount}}">{{leftCount}} {{ leftCount > 1 ? 'items' : 'item'}} left</text>
+    <text bindtap="clearHandle">Clear completed</text>
+  </view>
+  </block>
+  <view wx:else>
+    <image class="todos_image"  src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3258509352,3094579642&fm=26&gp=0.jpg"></image>
+    <view class="text_null">快击左上角的加号来添加你的任务清单吧~~~</view>
+  </view>
+</view>
